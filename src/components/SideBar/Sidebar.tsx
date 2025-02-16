@@ -1,19 +1,31 @@
-import style from "./Sidebar.module.scss";
+"use client";
 
-const SideBar = () => {
+import React from "react";
+import { FaBars } from "react-icons/fa";
+import styles from "./Sidebar.module.scss";
+
+import VerticalNavbar from "../VerticalNavbar/VerticalNavbar";
+
+const Sidebar: React.FC<{
+  isSidebarOpen: boolean;
+  toggleSidebar: () => void;
+}> = ({ isSidebarOpen, toggleSidebar }) => {
+  console.log("Sidebar rendered");
+
   return (
-    <>
-      <div className={style.iconPlaceholder}>Icon Placeholder</div>
-      <div className={style.sidebar}>
-        <div className={style.sidebarItem}>
-          <h2>Calendar</h2>
-        </div>
-        <div className={style.sidebarItem}>
-          <h2>Employees</h2>
-        </div>
+    <div
+      className={
+        isSidebarOpen
+          ? styles.sidebarOpen
+          : `${styles.sidebarOpen} ${styles.sidebarClosed}`
+      }
+    >
+      <div onClick={toggleSidebar} className={styles.menuIcon}>
+        <FaBars size={25} />
       </div>
-    </>
+      <VerticalNavbar />
+    </div>
   );
 };
 
-export default SideBar;
+export default Sidebar;

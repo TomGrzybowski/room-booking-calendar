@@ -1,0 +1,14 @@
+.layoutContainer {
+  display: flex;
+}
+
+.main {
+  transition: 0.5s ease;
+  flex: 1;
+  padding: 1rem;
+  margin-left: 0;
+
+  &.sidebarOpen {
+    margin-left: 250px;
+  }
+}

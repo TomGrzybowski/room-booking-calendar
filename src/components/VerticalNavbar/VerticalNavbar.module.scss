@@ -1,0 +1,16 @@
+.sidebarList {
+  display: flex;
+  flex-direction: column;
+  margin-top: 3rem;
+  //   padding: 0 0.5rem;
+}
+
+.sidebarItem > a {
+  display: flex;
+  margin: 1rem 2rem;
+  gap: 1rem;
+  align-items: center;
+  &:hover {
+    text-decoration: underline;
+  }
+}
