@@ -10,8 +10,6 @@ const Sidebar: React.FC<{
   isSidebarOpen: boolean;
   toggleSidebar: () => void;
 }> = ({ isSidebarOpen, toggleSidebar }) => {
-  console.log("Sidebar rendered");
-
   return (
     <div
       className={

@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useCallback, useEffect, useState } from "react";
+import React, { useCallback, useState } from "react";
 import FullCalendar from "@fullcalendar/react";
 import resourceTimelinePlugin from "@fullcalendar/resource-timeline";
 import { EventInput, EventClickArg } from "@fullcalendar/core";
@@ -22,17 +22,11 @@ const RoomScheduler: React.FC = () => {
 
   const roomsNameList = rooms.map((room) => "Room " + room.number);
 
-  useEffect(() => {
-    console.log("Reservations state: ", reservationsState);
-    console.log("Rooms: ", rooms);
-  }, [reservationsState]);
-
   const handleEventClick = useCallback((info: EventClickArg) => {
     alert(`Event: ${info.event.title} Hello`);
   }, []);
 
   const openAddReservationModal = () => {
-    console.log("Add reservation button clicked");
     setIsModalOpen(true);
   };
 
@@ -50,8 +44,6 @@ const RoomScheduler: React.FC = () => {
     const endDatetoDate = new Date(data.endDate);
     endDatetoDate.setDate(endDatetoDate.getDate() + 1);
     const newRoomId = roomNumber[0] + "_" + roomNumber;
-
-    console.log("room number:", roomNumber);
 
     const reservationTitle = (id: string): string | undefined => {
       const employee = employees.find((emp) => emp.id === id);
