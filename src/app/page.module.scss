@@ -38,4 +38,10 @@
   align-items: center;
   gap: 3rem;
   font-size: larger;
+
+  transition: 0.3s ease;
+
+  &:hover {
+    transform: scale(1.1);
+  }
 }

@@ -17,6 +17,14 @@ body {
 th .fc-datagrid-cell-main {
   display: none;
 }
+
+.fc-direction-ltr .fc-timeline-event.fc-event-end,
+.fc-direction-ltr .fc-timeline-more-link {
+  margin-right: 5%;
+  margin-left: 5%;
+  border-radius: 15px;
+  padding-left: 5px;
+}
 // .fc .fc-timeline-event-harness .fc-event {
 //   // margin-top: 5px;
 //   margin-left: 65px;

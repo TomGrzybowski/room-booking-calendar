@@ -81,6 +81,12 @@ const RoomScheduler: React.FC = () => {
             title: "Room " + room.number,
           }))}
           events={reservationsState as EventInput[]}
+          dayCellClassNames={(info) => {
+            if (info.date.getDay() === 0) {
+              return ["sunday-cell"];
+            }
+            return [];
+          }}
           headerToolbar={{
             left: "addReservation prev,next today",
             center: "title",
